@@ -1,0 +1,173 @@
+/* Reset some basic elements for consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0f24;
+  color: #f3f4f6;
+  line-height: 1.6;
+  /* Smooth text rendering on different browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #8b5cf6;
+  text-decoration: none;
+}
+a:hover {
+  color: #c084fc;
+  transition: color 0.3s ease;
+}
+
+/* Navigation bar styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #c084fc;
+}
+
+/* Hero section with background image and gradient overlay. The pseudo-element
+ * ensures that the headline and tagline remain legible on top of the dark
+ * circuit board illustration. */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('../img/hero-bg.png') no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Dark gradient overlay for contrast and mood */
+  /* A slightly lighter overlay to let the subtle hero image shine through */
+  background: linear-gradient(
+    180deg,
+    rgba(10, 15, 36, 0.65) 0%,
+    rgba(10, 15, 36, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  padding: 3rem 2rem;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #4f46e5;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #6366f1;
+}
+
+/* General section styles */
+.section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section.alternate {
+  /* Slightly darker background to create separation between sections */
+  background: #0d1330;
+  border-radius: 12px;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.section p {
+  font-size: 1rem;
+  color: #d1d5db;
+  line-height: 1.8;
+}
+
+/* Footer styling */
+footer {
+  background-color: #0a0f24;
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.animated-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 13ch; /* Adjust based on the longest word (e.g., "autonomous driving") */
+  height: 1em;  /* Align to one line of text */
+  vertical-align: top;
+}
+
+.animated-areas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  color: #66e0ff;
+  white-space: nowrap;
+}

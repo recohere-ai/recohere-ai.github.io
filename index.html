@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http‑equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recohere – Scene Reconstruction & Digital Twins</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+
+    <header class="hero">
+      <nav class="navbar">
+        <a href="#" class="logo">Recohere</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="hero-content">
+        <h1>Reconstructing Reality</h1>
+        <p>
+          We automate the creation of digital twins using cutting-edge scene
+          reconstruction techniques like Neural Radiance Fields (NeRFs) and 3D
+          Gaussian Splatting. Our simulation environments accelerate the development
+          of AI-powered <span class="animated-wrapper"><span class="animated-areas"></span></span>
+        </p>
+        <a href="#about" class="cta-button">Learn More</a>
+      </div>
+    </header>
+
+
+    <main class="content">
+      <section id="about" class="section">
+        <h2>About Us</h2>
+        <p>
+          We're a small team combining years of industry experience with
+          a proven track record of cutting-edge AI and graphics research
+          to build accurate digital twins for high-quality simulation. 
+        </p>
+      </section>
+
+
+      <section id="research" class="section alternate">
+        <h2>Our Research</h2>
+        <p>
+          We have developed high-fidelity scene reconstruction methods 
+          such as NeRFs and 3D Gaussian Splatting for autonomous driving, 
+          bringing new levels of realism to digital twins.
+          Our work bridges photogrammetry, neural rendering and generative
+          modelling to unlock powerful simulation and immersive experiences.
+        </p>
+      </section>
+
+
+      <section id="contact" class="section">
+        <h2>Get In Touch</h2>
+        <p>
+          Questions about our vision? Interested in collaboration? Reach out via
+          email at <a href="mailto:info@recohere.ai">info@recohere.ai</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Recohere. All rights reserved.</p>
+    </footer>
+    <script>
+      const words = ["robotics.", "autonomous driving.", "manufacturing.", "defence."];
+      const element = document.querySelector(".animated-areas");
+      let index = 0;
+      let deleting = false;
+      let charIndex = 0;
+    
+      function typeLoop() {
+        const current = words[index];
+        if (!deleting) {
+          charIndex++;
+          if (charIndex <= current.length) {
+            element.textContent = current.substring(0, charIndex);
+          } else {
+            deleting = true;
+            setTimeout(typeLoop, 1500);
+            return;
+          }
+        } else {
+          charIndex--;
+          if (charIndex >= 0) {
+            element.textContent = current.substring(0, charIndex);
+          } else {
+            deleting = false;
+            index = (index + 1) % words.length;
+          }
+        }
+        setTimeout(typeLoop, deleting ? 50 : 100);
+      }
+    
+      document.addEventListener("DOMContentLoaded", typeLoop);
+    </script>
+  </body>
+</html>
