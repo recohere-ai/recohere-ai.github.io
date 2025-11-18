@@ -7,8 +7,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0a0f24;
-  color: #f3f4f6;
+  background-color: #10181f;
+  color: #fbfbfb;
   line-height: 1.6;
   /* Smooth text rendering on different browsers */
   -webkit-font-smoothing: antialiased;
@@ -16,11 +16,11 @@ body {
 }
 
 a {
-  color: #8b5cf6;
+  color: #ea3369;
   text-decoration: none;
 }
 a:hover {
-  color: #c084fc;
+  color: #eb47e8;
   transition: color 0.3s ease;
 }
 
@@ -41,7 +41,7 @@ a:hover {
 }
 
 .logo img {
-  height: 40px;
+  height: 32px;
   width: auto;
   display: block;
 }
@@ -53,12 +53,12 @@ a:hover {
 }
 
 .nav-links a {
-  color: #e5e7eb;
+  color: #e0ddd6;
   font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: #c084fc;
+  color: #eb47e8;
 }
 
 /* Hero section with background image and gradient overlay. The pseudo-element
@@ -79,12 +79,12 @@ a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  /* Dark gradient overlay for contrast and mood */
-  /* A slightly lighter overlay to let the subtle hero image shine through */
+  /* Dark gradient overlay with new color palette for contrast and mood */
   background: linear-gradient(
     180deg,
-    rgba(10, 15, 36, 0.65) 0%,
-    rgba(10, 15, 36, 0.85) 100%
+    rgba(49, 11, 10, 0.75) 0%,
+    rgba(16, 24, 31, 0.9) 50%,
+    rgba(44, 47, 76, 0.85) 100%
   );
   z-index: 1;
 }
@@ -107,23 +107,26 @@ a:hover {
 
 .hero-content p {
   font-size: 1.25rem;
-  color: #d1d5db;
+  color: #e0ddd6;
   margin-bottom: 2rem;
   max-width: 600px;
 }
 
 .cta-button {
   display: inline-block;
-  background: #4f46e5;
+  background: linear-gradient(135deg, #ea3369 0%, #eb47e8 100%);
   color: #ffffff;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   font-weight: 600;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(234, 51, 105, 0.3);
 }
 
 .cta-button:hover {
-  background: #6366f1;
+  background: linear-gradient(135deg, #eb47e8 0%, #ea3369 100%);
+  box-shadow: 0 6px 20px rgba(235, 71, 232, 0.4);
+  transform: translateY(-2px);
 }
 
 /* General section styles */
@@ -134,31 +137,36 @@ a:hover {
 }
 
 .section.alternate {
-  /* Slightly darker background to create separation between sections */
-  background: #0d1330;
+  /* Contrasting background with subtle gradient for visual interest */
+  background: linear-gradient(135deg, #2c2f4c 0%, #310b0a 100%);
   border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(157, 49, 83, 0.15);
 }
 
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  background: linear-gradient(135deg, #ea3369 0%, #eb47e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section p {
   font-size: 1rem;
-  color: #d1d5db;
+  color: #e0ddd6;
   line-height: 1.8;
 }
 
 /* Footer styling */
 footer {
-  background-color: #0a0f24;
+  background-color: #10181f;
   text-align: center;
   padding: 2rem;
-  color: #6b7280;
+  color: #9d3153;
   font-size: 0.875rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(234, 51, 105, 0.2);
 }
 
 .animated-wrapper {
@@ -174,8 +182,9 @@ footer {
   top: 0;
   left: 0;
   font-weight: 600;
-  color: #66e0ff;
+  color: #e6fe53;
   white-space: nowrap;
+  text-shadow: 0 0 20px rgba(230, 254, 83, 0.5);
 }
 
 /* Mobile responsiveness */
@@ -239,7 +248,7 @@ footer {
   }
   
   .logo img {
-    height: 32px;
+    height: 28px;
   }
   
   .nav-links {
