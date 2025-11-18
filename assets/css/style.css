@@ -40,6 +40,12 @@ a:hover {
   color: #ffffff;
 }
 
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -230,6 +236,10 @@ footer {
   
   .logo {
     font-size: 1.25rem;
+  }
+  
+  .logo img {
+    height: 32px;
   }
   
   .nav-links {
