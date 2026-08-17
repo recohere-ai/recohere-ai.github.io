@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="We convert your raw sensor data into interactive, editable virtual worlds.">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#070706">
+    <meta name="theme-color" content="#050606">
     <meta name="color-scheme" content="dark">
     <title>Recohere</title>
     <link rel="canonical" href="https://recohere.ai/">
@@ -46,7 +46,6 @@
       <div class="flow-layer flow-bed" aria-hidden="true"></div>
       <div class="flow-layer flow-current flow-current-a" aria-hidden="true"></div>
       <div class="flow-layer flow-current flow-current-b" aria-hidden="true"></div>
-      <div class="flow-layer flow-current flow-current-c" aria-hidden="true"></div>
       <section class="statement-stack">
         <h1 class="glitch-mark statement-logo-frame">
           <img class="glitch-base" src="assets/img/recohere_white.svg" alt="Recohere">
@@ -59,6 +58,41 @@
       <small class="statement-copyright">&copy; 2026</small>
       <a class="statement-email" href="mailto:info@recohere.ai">info@recohere.ai</a>
     </main>
+    <script>
+      (() => {
+        const mark = document.querySelector(".glitch-mark");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!mark || reducedMotion) return;
+
+        const images = [...mark.querySelectorAll("img")];
+        const decoded = images.map((image) => new Promise((resolve) => {
+          const decode = () => {
+            if (typeof image.decode !== "function") {
+              resolve();
+              return;
+            }
+
+            image.decode().then(resolve, resolve);
+          };
+
+          if (image.complete) {
+            decode();
+          } else {
+            image.addEventListener("load", decode, { once: true });
+            image.addEventListener("error", resolve, { once: true });
+          }
+        }));
+
+        Promise.all(decoded).then(() => {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              window.setTimeout(() => mark.classList.add("glitch-ready"), 120);
+            });
+          });
+        });
+      })();
+    </script>
     <!-- Privacy: Cloudflare Web Analytics is cookie-free. Recohere does not set analytics cookies or store visitor analytics data in the browser; aggregate measurements are processed by Cloudflare, which states that Web Analytics does not collect or use visitor personal data. -->
     <!-- Cloudflare Web Analytics -->
     <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"1de7824788fe447785227762613a7aec"}'></script>
